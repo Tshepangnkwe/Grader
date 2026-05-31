@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Grader</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main class="container">
+            <section class="hero">
+                <div>
+                    <p class="eyebrow">JavaScript Bootcamp Task 2</p>
+                    <h1>Grader</h1>
+                    <p class="subtext">
+                        Enter a student name and mark to see an instant
+                        pass/fail result and grade.
+                    </p>
+                </div>
+                <div class="badge" aria-label="Project badge">Live grading</div>
+            </section>
+
+            <form id="gradeForm" novalidate>
+                <div class="field">
+                    <label for="studentName">Student Name</label>
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Enter student name"
+                        autocomplete="name"
+                    />
+                    <small class="hint">Required field.</small>
+                </div>
+
+                <div class="field">
+                    <label for="studentMark">Student Mark</label>
+                    <input
+                        type="number"
+                        id="studentMark"
+                        min="0"
+                        max="100"
+                        placeholder="0-100"
+                    />
+                    <small class="hint">Enter a number from 0 to 100.</small>
+                </div>
+
+                <div class="actions">
+                    <button type="submit">Check Result</button>
+                    <button type="button" id="resetBtn" class="secondary">
+                        Clear
+                    </button>
+                </div>
+            </form>
+
+            <section class="result-box" aria-live="polite">
+                <h2>Result</h2>
+                <div id="result">No result yet.</div>
+            </section>
+
+            <section class="list-box">
+                <div class="section-head">
+                    <h2>Submitted Students</h2>
+                    <span id="count">0 submissions</span>
+                </div>
+                <ul id="studentList"></ul>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
